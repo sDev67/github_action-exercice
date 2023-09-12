@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '**.ts'
+      - 'node_modules/**'
 
 
 jobs:
