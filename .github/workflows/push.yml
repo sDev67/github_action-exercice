@@ -3,7 +3,7 @@ name: Events exercices push
 on:
   push:
     branches:
-      - 'dev'
+      - 'feat/*'
 
 jobs:
   exo-push-2:
@@ -11,3 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+    
+      - name: Say hello
+        run: echo "Hello ${{ github.actor }}"
