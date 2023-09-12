@@ -2,13 +2,18 @@ name: Events exercices push
 
 on:
   push:
+    branches:
+      - 'dev'
+  pull_request:
+    types:
+      - opened
+      - closed
     paths:
       - '**.ts'
       - 'node_modules/**'
-
-
+      
 jobs:
-  exo-push-2:
+  exo-mr-2:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
