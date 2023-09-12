@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - 'dev'
+  pull_request:
+    types:
+      - opened
+      - closed
 
 jobs:
-  exo-push-2:
+  exo-mr-2:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
