@@ -9,10 +9,11 @@ on:
   #     - 'node_modules/**'
 
 
-  # pull_request:
-  #   types:
-  #     - opened
-  #     - closed
+  pull_request:
+    types:
+      - opened
+      - closed
+  
 
   # schedule:
   #   - cron: '*/5 * * * *'
@@ -32,6 +33,7 @@ jobs:
         run: echo "Hello ${{ github.actor }} from job1"
 
   exo-mr-job2:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
