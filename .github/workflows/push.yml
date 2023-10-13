@@ -1,4 +1,4 @@
-name: Events exercices push
+name: Events exercices
 
 on:
   push:
@@ -20,11 +20,21 @@ on:
 
       
 jobs:
-  exo-mr-2:
+  exo-mr-job1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Say hello
-        run: echo "Hello ${{ github.actor }}"
+      - name: Say hello from job1
+        run: echo "Hello ${{ github.actor }} from job1"
+
+  exo-mr-job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Say hello from job2
+        run: echo "Hello ${{ github.actor }} from job2"
+
