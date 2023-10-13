@@ -21,12 +21,13 @@ on:
       
 jobs:
   exo-mr-job1:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Say hello from job1
+      - name: Say hello from job1 and its a pull request
         run: echo "Hello ${{ github.actor }} from job1"
 
   exo-mr-job2:
