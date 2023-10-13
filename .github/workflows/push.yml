@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '**.ts'
-      - 'node_modules/**'
+  #   paths:
+  #     - '**.ts'
+  #     - 'node_modules/**'
 
-  pull_request:
-    types:
-      - opened
-      - closed
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - closed
 
   # schedule:
   #   - cron: '*/5 * * * *'
