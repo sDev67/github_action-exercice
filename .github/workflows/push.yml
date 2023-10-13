@@ -9,10 +9,10 @@ on:
   #     - 'node_modules/**'
 
 
-  # pull_request:
-  #   types:
-  #     - opened
-  #     - closed
+  pull_request:
+    types:
+      - opened
+      - closed
   
 
   # schedule:
@@ -23,7 +23,6 @@ on:
       
 jobs:
   exo-mr-job1:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,6 +32,7 @@ jobs:
         run: echo "Hello ${{ github.actor }} from job1"
 
   exo-mr-job2:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
